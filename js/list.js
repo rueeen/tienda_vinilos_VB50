@@ -5,7 +5,7 @@ function cargarTabla(){
 
     const bodyTabla = document.querySelector('#vinylTable tbody');
 
-    arrayVinyls.forEach(function(element) {
+    arrayVinyls.forEach(function(element, indice) {
         const row = document.createElement('tr');
 
         row.innerHTML = `
@@ -14,10 +14,11 @@ function cargarTabla(){
                         <td>${element.description}</td>
                         <td>${element.price}</td>
                         <td><img src='${element.image}' style='width:100px; heigth:auto'></td>
-                        <td><a href='#'>Eliminar</a></td>
+                        <td><a class='btn btn-danger' onclick='eliminarVinilo(${indice})'><i class="bi bi-trash"></i></a></td>
                         `;
         bodyTabla.appendChild(row);
     });
 };
 
 window.addEventListener('load', cargarTabla);
+
