@@ -10,12 +10,17 @@ function cargarDatos() {
 
     console.log(title);
 
-
-
     const vinilo = arrayVinyls.find(e => e.title === title);
 
     console.log(vinilo);
 
+    const preload = document.querySelector('#preLoadImage');
+
+    const img = document.createElement('img');
+    img.src = vinilo.image;
+    img.style.width ='100px';
+    img.style.height ='auto';
+    preload.appendChild(img);
     const inpTitle = document.querySelector('#title');
 
     inpTitle.value = vinilo.title;
