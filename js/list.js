@@ -14,7 +14,10 @@ function cargarTabla(){
                         <td>${element.description}</td>
                         <td>${element.price}</td>
                         <td><img src='${element.image}' style='width:100px; heigth:auto'></td>
-                        <td><a class='btn btn-danger' onclick='eliminarVinilo(${indice})'><i class="bi bi-trash"></i></a></td>
+                        <td>
+                            <a class='btn btn-danger' onclick='eliminarVinilo(${indice})'><i class="bi bi-trash"></i></a>
+                            <a class='btn btn-warning' href='edit.html?title=${element.title}&artist=${element.artist}'><i class="bi bi-pencil-square"></i></a>
+                        </td>
                         `;
         bodyTabla.appendChild(row);
     });
